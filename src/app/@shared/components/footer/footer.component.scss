@@ -1,0 +1,57 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 44px;
+
+    background-color: var(--app-color-primary);
+    color: var(--app-color-primary-contrast);
+
+    font-family: 'WorkSansLight';
+    font-size: 21px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    width: 100%;
+    max-width: var(--app-content-max-width);
+}
+
+.social-links {
+    display: flex;
+    gap: 0.5rem;
+
+    a {
+        display: inline-block;
+
+        width: 38px;
+        height: 38px;
+
+        border-radius: 50%;
+        background-color: var(--app-color-primary-contrast);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    :host {
+        padding: 30px;
+
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    :host {
+        padding: 20px;
+    }
+
+    .content {
+        text-align: center;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,102 @@
+// @TODO: Mettre les éléments décoratifs en CSS (icônes, logos, pictos, etc.)
+
+// Fonts
+@font-face {
+    font-family: 'WorkSansRegular';
+    src: url('assets/fonts/WorkSans/WorkSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'WorkSansLight';
+    src: url('assets/fonts/WorkSans/WorkSans-Light.ttf');
+}
+
+@font-face {
+    font-family: 'WorkSansThin';
+    src: url('assets/fonts/WorkSans/WorkSans-Thin.ttf');
+}
+
+@font-face {
+    font-family: 'LatoLight';
+    src: url('assets/fonts/Lato/Lato-Light.ttf');
+}
+
+@font-face {
+    font-family: 'QuentinRegular';
+    src: url('assets/fonts/Quentin/Quentin-Regular.otf');
+}
+
+// CSS Variables
+:root {
+    --app-color-primary: #486f7c;
+    --app-color-primary-contrast: #fff;
+
+    --app-color-secondary: #d6b98c;
+
+    --app-color-background: #fff;
+
+    --app-color-on-background: #000;
+
+    --app-font-regular: 'WorkSansRegular';
+
+    --app-content-max-width: 1440px;
+}
+
+@import url('./app/@shared/components/header/header.variables.scss');
+
+// Default styles
+html {
+    box-sizing: border-box;
+
+    background: var(--app-color-background);
+
+    font-family: var(--app-font-regular);
+    color: var(--app-color-on-background);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h2 {
+    font-size: 53px;
+    font-family: 'WorkSansThin';
+}
+
+.screen-reader-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}

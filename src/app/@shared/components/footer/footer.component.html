@@ -1,0 +1,9 @@
+<div class="content">
+    <div class="design">©Karoline-design. Tous&nbsp;droits&nbsp;reservés</div>
+
+    <div class="social-links">
+        <a [href]="link.href" *ngFor="let link of socialLinks">
+            <app-icon [name]="link.iconName" [iconAlt]="link.iconAlt" />
+        </a>
+    </div>
+</div>

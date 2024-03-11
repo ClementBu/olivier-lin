@@ -1,0 +1,18 @@
+<div class="greetings">
+    <div class="hello">Bonjour</div>
+    <div class="name">Je m'appelle Olivier Lin</div>
+
+    <p>
+        Olivier Lin est un acteur international parlant anglais et mandarin.
+        <br />
+        Il est d'origine chinois et passe pour un chinois, japonais et coréen.
+    </p>
+
+    <div class="social-links">
+        <a [href]="link.href" *ngFor="let link of socialLinks">
+            <app-icon [name]="link.iconName" [iconAlt]="link.iconAlt" />
+        </a>
+    </div>
+</div>
+
+<img class="img-introduction" src="/assets/images/olivierlin1.jpg" aria-hidden="true" />

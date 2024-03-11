@@ -1,0 +1,22 @@
+<h2>Me contacter</h2>
+
+<form id="form-contact" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="input-wrapper">
+        <label for="name">Nom</label>
+        <input id="name" type="text" placeholder="Votre nom" formControlName="name" />
+    </div>
+
+    <div class="input-wrapper">
+        <label for="email">E-mail *</label>
+        <input id="email" type="email" placeholder="Votre adresse e-mail" formControlName="email" />
+        <div class="error" @fadeCollapseEnterLeave *ngIf="emailError">{{ emailError }}</div>
+    </div>
+
+    <div class="input-wrapper">
+        <label for="message">Message *</label>
+        <textarea id="message" placeholder="Rédigez votre message ici..." formControlName="message" rows="3"></textarea>
+        <div class="error" @fadeCollapseEnterLeave *ngIf="messageError">{{ messageError }}</div>
+    </div>
+</form>
+
+<button type="submit" app-button form="form-contact">Envoyer</button>

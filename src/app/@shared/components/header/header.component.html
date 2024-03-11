@@ -1,0 +1,48 @@
+<nav>
+    <a routerLink="/home" class="logo">
+        <span class="screen-reader-only">Accueil</span>
+    </a>
+
+    <div class="app-links">
+        <a app-link routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"> Accueil </a>
+
+        <button app-link [app-trigger-menu-for]="menu" [gap]="8">Book</button>
+
+        <app-menu #menu="menu">
+            <ul>
+                <li>
+                    <a
+                        app-link
+                        app-menu-item
+                        routerLink="/book-comedien"
+                        routerLinkActive="active"
+                        ariaCurrentWhenActive="page"
+                    >
+                        Comédien
+                    </a>
+                </li>
+                <li>
+                    <a
+                        app-link
+                        app-menu-item
+                        routerLink="/book-modele"
+                        routerLinkActive="active"
+                        ariaCurrentWhenActive="page"
+                    >
+                        Modèle
+                    </a>
+                </li>
+            </ul>
+        </app-menu>
+
+        <a app-link routerLink="/bandes-demo" routerLinkActive="active" ariaCurrentWhenActive="page"> Bandes Démo </a>
+
+        <a app-link routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page"> Contact </a>
+    </div>
+
+    <div class="social-links">
+        <a [href]="link.href" *ngFor="let link of socialLinks">
+            <app-icon [name]="link.iconName" [iconAlt]="link.iconAlt" />
+        </a>
+    </div>
+</nav>

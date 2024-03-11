@@ -1,0 +1,44 @@
+:host {
+    display: block;
+
+    width: -webkit-fill-available;
+    width: -moz-available;
+
+    height: -webkit-fill-available;
+    height: -moz-available;
+
+    mask-position: center;
+    mask-repeat: no-repeat;
+
+    background-color: var(--app-color-primary);
+}
+
+:host.instagram {
+    mask-image: url('/assets/images/instagram.svg');
+    mask-size: 75%;
+}
+
+:host.facebook {
+    mask-image: url('/assets/images/facebook.svg');
+    mask-size: 85%;
+}
+
+:host.youtube {
+    mask-image: url('/assets/images/youtube.svg');
+    mask-size: 90%;
+}
+
+:host.instagram_dirty {
+    mask-image: url('/assets/images/instagram_dirty.png');
+    mask-size: 100%;
+}
+
+:host.facebook_dirty {
+    mask-image: url('/assets/images/facebook_dirty.png');
+    mask-size: 85%;
+}
+
+:host.youtube_dirty {
+    mask-image: url('/assets/images/youtube_dirty.png');
+    mask-size: 90%;
+}

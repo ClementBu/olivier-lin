@@ -1,0 +1,65 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 3rem 4rem;
+
+    background: #fbf8f4;
+}
+
+home-swiper-book {
+    margin: 3rem 0;
+}
+
+.links {
+    display: flex;
+    gap: 3rem;
+}
+
+@media screen and (max-width: 1000px) {
+    :host {
+        padding: 2rem;
+
+        h2 {
+            font-size: 43px;
+        }
+
+        home-swiper-book {
+            margin: 2rem 0;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    :host {
+        padding: 1.5rem;
+
+        // @TODO: same font-size selon breakpoints sur h2
+        h2 {
+            font-size: 36px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :host {
+        padding: 1rem 1rem 2rem;
+
+        h2 {
+            font-size: 26px;
+        }
+
+        home-swiper-book {
+            margin: 1rem 0 2rem;
+        }
+
+        .links {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+
+            width: 100%;
+        }
+    }
+}
