@@ -9,6 +9,7 @@ import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angu
 export class MenuItemDirective {
     @Output() focusEntered = new EventEmitter<void>();
     @Output() focusLeft = new EventEmitter<void>();
+    @Output() clicked = new EventEmitter<void>();
 
     private _hasFocus: boolean;
 
@@ -24,6 +25,12 @@ export class MenuItemDirective {
     onBlur(): void {
         this.focusLeft.emit();
         this._hasFocus = false;
+    }
+
+    @HostListener('click')
+    onClick(): void {
+        this.blur();
+        this.clicked.emit();
     }
 
     focus(): void {

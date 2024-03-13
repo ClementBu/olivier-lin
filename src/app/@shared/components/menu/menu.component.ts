@@ -46,15 +46,17 @@ export class MenuComponent implements AfterContentInit {
     ngAfterContentInit(): void {
         this.menuItems.last.focusEntered.subscribe(() => this.focusEntered.emit());
 
-        this.menuItems.forEach((m, i) =>
+        this.menuItems.forEach((m, i) => {
             m.focusLeft.subscribe(() => {
                 setTimeout(() => {
                     if (!this.hasFocus) {
                         this.focusLeft.emit();
                     }
                 }, 50);
-            })
-        );
+            });
+
+            m.clicked.subscribe(() => this.close());
+        });
     }
 
     @HostListener('mouseenter')
