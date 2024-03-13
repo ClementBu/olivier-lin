@@ -9,6 +9,9 @@ const routes: Routes = [
     },
 
     { path: 'book-model', loadChildren: () => import('./book-model/book-model.module').then(m => m.BookModelModule) },
+
+    { path: 'showreels', loadChildren: () => import('./showreels/showreels.module').then(m => m.ShowreelsModule) },
+
     { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
