@@ -1,4 +1,32 @@
 :host {
+    --video-width: 54%;
+    --spacing-base: 60px;
+    --title-font-size: 46px;
+    --description-font-size: 28px;
+
+    @media screen and (max-width: 1400px) {
+        --video-width: 60%;
+        --spacing-base: 50px;
+        --title-font-size: 40px;
+        --description-font-size: 24px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        --video-width: 60%;
+        --spacing-base: 36px;
+        --title-font-size: 36px;
+        --description-font-size: 22px;
+    }
+
+    @media screen and (max-width: 900px) {
+        --video-width: 65%;
+        --spacing-base: 30px;
+        --title-font-size: 32px;
+        --description-font-size: 20px;
+    }
+}
+
+:host {
     display: flex;
     justify-content: center;
 
@@ -7,22 +35,22 @@
     .content {
         display: grid;
         grid-template-rows: auto 1fr;
-        gap: 40px;
+        gap: calc(var(--spacing-base) * 0.6);
 
         max-width: 1600px;
 
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: var(--spacing-base);
+        padding-bottom: var(--spacing-base);
     }
 
     &:nth-child(odd) {
         .content {
-            grid-template-columns: 54% 1fr;
+            grid-template-columns: var(--video-width) 1fr;
             grid-template-areas:
                 'video       title'
                 'video description';
 
-            padding-right: 40px;
+            padding-right: calc(var(--spacing-base) * 0.6);
         }
     }
 
@@ -30,12 +58,12 @@
         background: #fbf8f4;
 
         .content {
-            grid-template-columns: 1fr 54%;
+            grid-template-columns: 1fr var(--video-width);
             grid-template-areas:
                 'title       video'
                 'description video';
 
-            padding-left: 40px;
+            padding-left: calc(var(--spacing-base) * 0.6);
         }
     }
 
@@ -49,14 +77,51 @@
     .title {
         grid-area: title;
 
-        padding-top: 40px;
+        padding-top: calc(var(--spacing-base) * 0.6);
 
-        font-size: 46px;
+        font-size: var(--title-font-size);
     }
 
     .description {
         grid-area: description;
 
-        font-size: 28px;
+        font-size: var(--description-font-size);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    :host {
+        .content:nth-child(odd),
+        .content:nth-child(even) {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                'title'
+                'video'
+                'description';
+
+            padding: var(--spacing-base);
+
+            text-align: center;
+        }
+
+        .title {
+            padding-top: 0;
+        }
+
+        @media screen and (max-width: 600px) {
+            --spacing-base: 16px;
+            --title-font-size: 30px;
+            --description-font-size: 17px;
+
+            .content:nth-child(odd),
+            .content:nth-child(even) {
+                padding: var(--spacing-base) 0;
+            }
+
+            .title,
+            .description {
+                padding: 0 var(--spacing-base);
+            }
+        }
     }
 }
