@@ -90,6 +90,12 @@ button {
     }
 }
 
+@media screen and (max-width: 600px) {
+    button {
+        align-self: center;
+    }
+}
+
 @media screen and (max-width: 500px) {
     :host {
         padding: 20px;

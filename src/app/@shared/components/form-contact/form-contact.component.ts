@@ -1,9 +1,14 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
-    selector: 'home-form-contact',
+    standalone: true,
+    imports: [CommonModule, ReactiveFormsModule, ButtonComponent],
+
+    selector: 'app-form-contact',
     templateUrl: './form-contact.component.html',
     styleUrl: './form-contact.component.scss',
 
@@ -15,7 +20,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
         ]),
     ],
 })
-export class HomeFormContactComponent {
+export class FormContactComponent {
     form: FormGroup;
 
     constructor(private formBuilder: FormBuilder) {

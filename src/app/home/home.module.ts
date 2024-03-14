@@ -10,18 +10,25 @@ import { LinkComponent } from '../@shared/components/link/link.component';
 import { HomeSwiperBookComponent } from './components/swiper-book/swiper-book.component';
 import { ButtonComponent } from '../@shared/components/button/button.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomeFormContactComponent } from './components/form-contact/form-contact.component';
 import { HomeSectionContactComponent } from './components/section-contact/section-contact.component';
+import { FormContactComponent } from '../@shared/components/form-contact/form-contact.component';
 
 @NgModule({
-    imports: [CommonModule, ReactiveFormsModule, HomeRoutingModule, IconComponent, LinkComponent, ButtonComponent],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        HomeRoutingModule,
+        IconComponent,
+        LinkComponent,
+        ButtonComponent,
+        FormContactComponent,
+    ],
     declarations: [
         HomePageComponent,
         HomeVideoComponent,
         HomeIntroductionComponent,
         HomeSwiperBookComponent,
         HomeSectionBookComponent,
-        HomeFormContactComponent,
         HomeSectionContactComponent,
     ],
 })
